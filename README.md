@@ -17,15 +17,15 @@ Variant prediction scores for each test variant and each missense variant in eac
 For each tool, its performance for each year of ClinVar data was derived as follows. Each pathogenic variant was individually 'spiked into' the set of variants for each individual. Next, the tool would score each missense variant in that individual (including the pathogenic one). Then, variants would be ranked in descending order by the tool's score. The rank of the causal variant within the set would be taken as the raw measure of performance of the tool for that variant in that individual. This rank value was then normalized by dividing it by the total number of variants in that individual for which this tool provided scores. In this way, the normalized score gives a sort of 'rank percentile' for the variant which normalizes out any advantage a tool might get if it only has scores available for a subset of all missense variants. This 'spike-in' process is then repeated for each of the 31,811 pathogenic variants being placed into each of the 108 individuals for a total of over 3.4 million tests per tool. These normalized rank values are then plotted to show the cumulative number of simulated cases that would have been solved within the top, say, 0.01% to 0.3% of variants within an individual. This method of evaluation is meant to show how good of a job the tool is doing at 'picking the needle out of the haystack'. Finally, we take the area under this cumulative cases solved curve in order to provide a final score for each tool. A perfect tool would get an area under the curve score of 1, meaning that it gives top rank to the causal variant every single time. While a poor tool would get a score of 0, meaning that it takes it longer to find any of the causal variants than the window of evaluation here (typically, the tool did not prioritize the causal variant into the top 1% of variants in the individual). 
 
 ## Results
-The current overall result of this benchmarking effort is shown in ![Figure 1](Figure1.png).
+The current overall result of this benchmarking effort is shown below: ![Figure 1](Figure1.png)
 
 This figure shows the average area under the normalized solve curve for each tool measured over the seven years of data (2017 - 2023) with the error bars representing the standard deviation of the tool's performance over the years. 
 
-Results for each individual year look like this: ![2020 non-normalized](Figure3.png).
+Results for each individual year look like this: ![2020 non-normalized](Figure2.png)
 
 Where on the left we have the individual solve curves for each tool. The x-axis is the top-n ranks of variants inspected and the y-axis is the cumulative percentage of simulated cases that would be solved by variants in those top-n ranks. On the right, we see the area under the curves on the left, taken through the top 20 ranks. Only the top performing 40 tools are shown for clarity. 
 
-The normalized results for that same year look like this: ![2020 normalized](Figure3.png).
+The normalized results for that same year look like this: ![2020 normalized](Figure3.png)
 
 This figure is much the same, but the x-axis of the figure on the left is now the percentile of variants instead of absolute rank number in order to not give an unfair advantage to tools that did not have available scores for all variants. 
 
