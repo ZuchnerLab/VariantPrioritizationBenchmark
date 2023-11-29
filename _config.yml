@@ -1,1 +1,7 @@
-# no contents yet
+theme: jekyll-theme-slate
+
+# Name of your site (displayed in the header)
+name: Variant Prioritization Benchmark
+
+# Short bio or description (displayed in the header)
+description: Open and freely-redistributable dataset and leaderboard for the medical genetics task of variant prioritization
