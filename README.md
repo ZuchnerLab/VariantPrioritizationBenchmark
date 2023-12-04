@@ -32,14 +32,10 @@ The normalized results for that same year look like this: ![2020 normalized](Fig
 
 This figure is much the same, but the x-axis of the figure on the left is now the percentile of variants instead of absolute rank number in order to not give an unfair advantage to tools that did not have available scores for all variants. 
 
-### VarPB correlation with MAVEs and ClinVar classification
+### VarPB correlation with MAVEs
 Our initial motivation for creating VarPB was anecdotal observation that strong performance on MAVE datasets did not equate to strong performance at medical genetics prioritization tasks. So, one of our top priorities with VarPB was to assess its correlation with MAVE performance measures for a variety of tools. We used the performance of 10 pathogenicity prediction tools (AlphaMissense, EVE, gMVP, VARITY_R_LOO, REVEL, SIFT, Polyphen2_HVAR, Polyphen2_HDIV, CADD, and PrimateAI) on the 26 human gene datasets in ProteinGym provided in Figure 3B of Cheng, et al (1) as our measure of MAVE performance and plotted this against performance measured on VarPB: ![varPB vs MAVEs](Figure4.png)
 
 We observed a spearman correlation coefficient of 0.238 between these two variables, suggesting that VarPB is indeed measuring a distinct aspect of variant effect prediction performance than this set of MAVEs. 
-
-The traditional measure that most manuscripts use for medical genetics benchmarking is to classify a balanced set of known benign and pathogenic variants from ClinVar into their respective groups. This approach has much in common with VarPB (especially since VarPB's athogenic variants are also taken from ClinVar), but there are two major differences. First, VarPB utilizes a much greater number of non-pathogenic variants (currently around 8,000 for each pathogenic variant) instead of the typical 1:1 ratio used in classification tasks. This imbalance is done to reflect the real-life challenge present in medical genetics. Second, not all of the "non-pathogenic" variants in VarPB are necessarily benign. They are simply the variants present in those individuals. Many of the heterozygous variants may be disease-causing when paired with a second deleterious variant on that same gene, while many others may be non-deterministic risk factors for other conditions. These reflect major challenges in medical genetics that are avoided in the typical ClinVar classification task. For these reasons, we also tested the correlation between VarPB performance and ClinVar classification performance of all 52 tested tools using a balanced set of 4,935 benign and pathogenic variants added to ClinVar in the year 2021. ![varPB vs ClinVar](Figure5.png)
-
-We observed a spearman correlation coefficient of 0.563 between VarPB and ClinVar classification performance, suggesting only moderate correlation between these two measures of pathogenic variant prediction. This indicates that VarPB may indeed provide new information in assessing tool performance even when tools have already been benchmarked on ClinVar classification accuracy. 
 
 ### Individual Year VarPB Data
 
