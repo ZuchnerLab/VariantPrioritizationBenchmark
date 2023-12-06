@@ -42,6 +42,7 @@ Our initial motivation for creating VarPB was anecdotal observation that strong 
 We observed a spearman correlation coefficient of 0.202 between these two variables, suggesting that VarPB is indeed measuring a distinct aspect of variant effect prediction performance than this set of MAVEs. 
 
 ### Individual Year VarPB Data
+<details><summary>Show individual year results</summary>
 In this section, the results for each individual year of ClinVar variants are reported. We show this with normalized solve curve, normalized area under the solve curve bar plot, non-normalized solve curve for top 20 ranks, non-normalized area under the solve curve for top 20 ranks bar plot, non-normalized solve curve for top 100 ranks, and non-normalized area under the solve curve for top 100 ranks bar plot for each year. 
 #### 2023
 Normalized solve curve: ![2023 normalized solve curve](Figures/2023_normalizedRanks.png)
@@ -133,6 +134,7 @@ Non-normalized area under the solve curve (top 20): ![2017 non-normalized AUC to
 Non-normalized solve curve (top 100): ![2017 non-normalized solve curve top 100](Figures/2017_ranks100.png)
 
 Non-normalized area under the solve curve (top 100): ![2017 non-normalized AUC top 100 bar plot](Figures/2017_AUC_barplots_ranks100.png)
+</details>
 
 ## Discussion
 In the current version of the benchmark, Maverick (3) outperforms all other tools in all seven years evaluated. It is a supervised learning system and was trained on a set that included the variants used in evaluation years 2017, 2018, and 2019, so its performance on those years should be acknowledged to be inflated (Maverick's overall performance as shown in the first figure would drop from 0.808 to 0.787 if years 2017, 2018, and 2019 were removed, so it would still be the top ranking tool). 
@@ -142,7 +144,7 @@ In general, supervised learning methods largely outperformed the unsupervised me
 This benchmark includes only missense variants, but future versions should offer tests that include frameshifting and non-frameshifting indels as well as stop-gain and stop-loss variants. Eventually, benchmarks like this should expand beyond just protein-altering variants to consider non-coding variants, structural variants, and tandem repeats. It is the authors' hope that a benchmark like this can grow with the field to continually provide a challenge for tool developers to solve. 
 
 ## Data Access
-All ClinVar variants used and the missense variants from each test individual, along with the ranks by which each tool solved each combination of test variant and individual, are available for download from Zenodo at DOI: XXX. Using this data, individuals can evaluate a new tool and compare it against all the others. Code to perform these evaluations is available in the [code folder](https://github.com/ZuchnerLab/VariantPrioritizationBenchmark/tree/main/Code). Unfortunately, the individual prediction scores of each tool on each variant are not included in this benchmark as they are subject to each individual tool's own copyright restrictions. 
+All ClinVar variants used and the missense variants from each test individual, along with the ranks by which each tool solved each combination of test variant and individual, are available for download from [Zenodo](https://doi.org/10.5281/zenodo.10278444). Using this data, individuals can evaluate a new tool and compare it against all the others. Code to perform these evaluations is available in the [code folder](https://github.com/ZuchnerLab/VariantPrioritizationBenchmark/tree/main/Code). Unfortunately, the individual prediction scores of each tool on each variant are not included in this benchmark as they are subject to each individual tool's own copyright restrictions. 
 
 The leaderboard of results data is available in the [results folder](https://github.com/ZuchnerLab/VariantPrioritizationBenchmark/tree/main/Results).
 
