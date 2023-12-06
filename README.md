@@ -28,7 +28,7 @@ The x-axis is the top-n ranks of variants inspected and the y-axis is the cumula
 We then normalize the ranks as described above, which generates a normalized solve curve for that year: ![2022 normalized ranks](Figures/2022_normalizedRanks.png)
 This figure is much the same, but the x-axis is now the percentile of variants instead of absolute rank number in order to not give an unfair advantage to tools that did not have available scores for all variants. 
 
-Finally, we calculate the area under those normalized curves to generate our final score for each tool for each individual year (only the top 40 tools are shown for visual clarity): ~[2022 normalized AUC](Figures/2022_AUC_barplots_normalizedRanks.png)
+Finally, we calculate the area under those normalized curves to generate our final score for each tool for each individual year (only the top 40 tools are shown for visual clarity): ![2022 normalized AUC](Figures/2022_AUC_barplots_normalizedRanks.png)
 
 ### VarPB correlation with MAVEs
 Our initial motivation for creating VarPB was anecdotal observation that strong performance on MAVE datasets did not equate to strong performance at medical genetics prioritization tasks. So, one of our top priorities with VarPB was to assess its correlation with MAVE performance measures for a variety of tools. We used the performance of 10 pathogenicity prediction tools (AlphaMissense, EVE, gMVP, VARITY_R_LOO, REVEL, SIFT, Polyphen2_HVAR, Polyphen2_HDIV, CADD, and PrimateAI) on the 26 human gene datasets in ProteinGym provided in Figure 3B of Cheng, et al (2) as our measure of MAVE performance and plotted this against performance measured on VarPB: ![varPB vs MAVEs](Figures/MAVE_comparison.png)
