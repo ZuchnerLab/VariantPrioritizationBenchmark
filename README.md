@@ -45,95 +45,30 @@ We observed a spearman correlation coefficient of 0.202 between these two variab
 <details><summary>Show individual year results</summary>
 In this section, the results for each individual year of ClinVar variants are reported. We show this with normalized solve curve, normalized area under the solve curve bar plot, non-normalized solve curve for top 20 ranks, non-normalized area under the solve curve for top 20 ranks bar plot, non-normalized solve curve for top 100 ranks, and non-normalized area under the solve curve for top 100 ranks bar plot for each year. 
 #### 2023
-Normalized solve curve: ![2023 normalized solve curve](Figures/2023_normalizedRanks.png)
-
-Normalized area under the solve curve: ![2023 normalized AUC bar plot](Figures/2023_AUC_barplots_normalizedRanks.png)
-
-Non-normalized solve curve (top 20): ![2023 non-normalized solve curve top 20](Figures/2023_ranks20.png)
-
-Non-normalized area under the solve curve (top 20): ![2023 non-normalized AUC top 20 bar plot](Figures/2023_AUC_barplots_ranks20.png)
-
-Non-normalized solve curve (top 100): ![2023 non-normalized solve curve top 100](Figures/2023_ranks100.png)
-
-Non-normalized area under the solve curve (top 100): ![2023 non-normalized AUC top 100 bar plot](Figures/2023_AUC_barplots_ranks100.png)
+{% include carousel.html number="1" %}
 
 #### 2022
-Normalized solve curve: ![2022 normalized solve curve](Figures/2022_normalizedRanks.png)
-
-Normalized area under the solve curve: ![2022 normalized AUC bar plot](Figures/2022_AUC_barplots_normalizedRanks.png)
-
-Non-normalized solve curve (top 20): ![2022 non-normalized solve curve top 20](Figures/2022_ranks20.png)
-
-Non-normalized area under the solve curve (top 20): ![2022 non-normalized AUC top 20 bar plot](Figures/2022_AUC_barplots_ranks20.png)
-
-Non-normalized solve curve (top 100): ![2022 non-normalized solve curve top 100](Figures/2022_ranks100.png)
-
-Non-normalized area under the solve curve (top 100): ![2022 non-normalized AUC top 100 bar plot](Figures/2022_AUC_barplots_ranks100.png)
+{% include carousel.html number="2" %}
 
 #### 2021
-Normalized solve curve: ![2021 normalized solve curve](Figures/2021_normalizedRanks.png)
+{% include carousel.html number="3" %}
 
-Normalized area under the solve curve: ![2021 normalized AUC bar plot](Figures/2021_AUC_barplots_normalizedRanks.png)
-
-Non-normalized solve curve (top 20): ![2021 non-normalized solve curve top 20](Figures/2021_ranks20.png)
-
-Non-normalized area under the solve curve (top 20): ![2021 non-normalized AUC top 20 bar plot](Figures/2021_AUC_barplots_ranks20.png)
-
-Non-normalized solve curve (top 100): ![2021 non-normalized solve curve top 100](Figures/2021_ranks100.png)
-
-Non-normalized area under the solve curve (top 100): ![2021 non-normalized AUC top 100 bar plot](Figures/2021_AUC_barplots_ranks100.png)
 
 #### 2020
-Normalized solve curve: ![2020 normalized solve curve](Figures/2020_normalizedRanks.png)
+{% include carousel.html number="4" %}
 
-Normalized area under the solve curve: ![2020 normalized AUC bar plot](Figures/2020_AUC_barplots_normalizedRanks.png)
-
-Non-normalized solve curve (top 20): ![2020 non-normalized solve curve top 20](Figures/2020_ranks20.png)
-
-Non-normalized area under the solve curve (top 20): ![2020 non-normalized AUC top 20 bar plot](Figures/2020_AUC_barplots_ranks20.png)
-
-Non-normalized solve curve (top 100): ![2020 non-normalized solve curve top 100](Figures/2020_ranks100.png)
-
-Non-normalized area under the solve curve (top 100): ![2020 non-normalized AUC top 100 bar plot](Figures/2020_AUC_barplots_ranks100.png)
 
 #### 2019
-Normalized solve curve: ![2019 normalized solve curve](Figures/2019_normalizedRanks.png)
+{% include carousel.html number="5" %}
 
-Normalized area under the solve curve: ![2019 normalized AUC bar plot](Figures/2019_AUC_barplots_normalizedRanks.png)
-
-Non-normalized solve curve (top 20): ![2019 non-normalized solve curve top 20](Figures/2019_ranks20.png)
-
-Non-normalized area under the solve curve (top 20): ![2019 non-normalized AUC top 20 bar plot](Figures/2019_AUC_barplots_ranks20.png)
-
-Non-normalized solve curve (top 100): ![2019 non-normalized solve curve top 100](Figures/2019_ranks100.png)
-
-Non-normalized area under the solve curve (top 100): ![2019 non-normalized AUC top 100 bar plot](Figures/2019_AUC_barplots_ranks100.png)
 
 #### 2018
-Normalized solve curve: ![2018 normalized solve curve](Figures/2018_normalizedRanks.png)
+{% include carousel.html number="6" %}
 
-Normalized area under the solve curve: ![2018 normalized AUC bar plot](Figures/2018_AUC_barplots_normalizedRanks.png)
-
-Non-normalized solve curve (top 20): ![2018 non-normalized solve curve top 20](Figures/2018_ranks20.png)
-
-Non-normalized area under the solve curve (top 20): ![2018 non-normalized AUC top 20 bar plot](Figures/2018_AUC_barplots_ranks20.png)
-
-Non-normalized solve curve (top 100): ![2018 non-normalized solve curve top 100](Figures/2018_ranks100.png)
-
-Non-normalized area under the solve curve (top 100): ![2018 non-normalized AUC top 100 bar plot](Figures/2018_AUC_barplots_ranks100.png)
 
 #### 2017
-Normalized solve curve: ![2017 normalized solve curve](Figures/2017_normalizedRanks.png)
+{% include carousel.html number="7" %}
 
-Normalized area under the solve curve: ![2017 normalized AUC bar plot](Figures/2017_AUC_barplots_normalizedRanks.png)
-
-Non-normalized solve curve (top 20): ![2017 non-normalized solve curve top 20](Figures/2017_ranks20.png)
-
-Non-normalized area under the solve curve (top 20): ![2017 non-normalized AUC top 20 bar plot](Figures/2017_AUC_barplots_ranks20.png)
-
-Non-normalized solve curve (top 100): ![2017 non-normalized solve curve top 100](Figures/2017_ranks100.png)
-
-Non-normalized area under the solve curve (top 100): ![2017 non-normalized AUC top 100 bar plot](Figures/2017_AUC_barplots_ranks100.png)
 </details>
 
 ## Discussion
