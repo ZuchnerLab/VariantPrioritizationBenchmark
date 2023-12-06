@@ -47,25 +47,25 @@ This figure shows the average area under the normalized solve curve for each too
 <details><summary>Show individual year results</summary>
 In this section, the results for each individual year of ClinVar variants are reported. We show this with normalized solve curve, normalized area under the solve curve bar plot, non-normalized solve curve for top 20 ranks, non-normalized area under the solve curve for top 20 ranks bar plot, non-normalized solve curve for top 100 ranks, and non-normalized area under the solve curve for top 100 ranks bar plot for each year. 
 #### 2023
-![2023 normalized solve curve](Figures/2023_normalizedRanks.png)
+![2023 normalized solve curve](Figures/2023_AUC_barplots_normalizedRanks.png)
 
 #### 2022
-![2022 normalized solve curve](Figures/2022_normalizedRanks.png)
+![2022 normalized solve curve](Figures/2022_AUC_barplots_normalizedRanks.png)
 
 #### 2021
-![2021 normalized solve curve](Figures/2021_normalizedRanks.png)
+![2021 normalized solve curve](Figures/2021_AUC_barplots_normalizedRanks.png)
 
 #### 2020
-![2020 normalized solve curve](Figures/2020_normalizedRanks.png)
+![2020 normalized solve curve](Figures/2020_AUC_barplots_normalizedRanks.png)
 
 #### 2019
-![2019 normalized solve curve](Figures/2019_normalizedRanks.png)
+![2019 normalized solve curve](Figures/2019_AUC_barplots_normalizedRanks.png)
 
 #### 2018
-![2018 normalized solve curve](Figures/2018_normalizedRanks.png)
+![2018 normalized solve curve](Figures/2018_AUC_barplots_normalizedRanks.png)
 
 #### 2017
-![2017 normalized solve curve](Figures/2017_normalizedRanks.png)
+![2017 normalized solve curve](Figures/2017_AUC_barplots_normalizedRanks.png)
 </details>
 
 ## Discussion
