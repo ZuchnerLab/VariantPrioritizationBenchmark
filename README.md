@@ -20,6 +20,19 @@ Variant prediction scores for each test variant and each missense variant in eac
 For each tool, its performance for each year of ClinVar data was derived as follows. Each pathogenic variant was individually 'spiked into' the set of variants for each individual. Next, the tool would score each missense variant in that individual (including the pathogenic one). Then, variants would be ranked in descending order by the tool's score. The rank of the causal variant within the set would be taken as the raw measure of performance of the tool for that variant in that individual. This rank value was then normalized by dividing it by the total number of variants in that individual for which this tool provided scores. In this way, the normalized score gives a sort of 'rank percentile' for the variant which normalizes out any advantage a tool might get if it only has scores available for a subset of all missense variants. This 'spike-in' process is then repeated for each of the 31,811 pathogenic variants being placed into each of the 107 individuals for a total of over 3.4 million tests per tool. These normalized rank values are then plotted to show the cumulative number of simulated cases that would have been solved within the top, say, 0.01% to 0.3% of variants within an individual. This method of evaluation is meant to show how good of a job the tool is doing at 'picking the needle out of the haystack'. Finally, we take the area under this cumulative cases solved curve in order to provide a final score for each tool. A perfect tool would get an area under the curve score of 1, meaning that it gives top rank to the causal variant every single time. While a poor tool would get a score of 0, meaning that it takes it longer to find any of the causal variants than the window of evaluation here (typically, the tool did not prioritize the causal variant into the top 1% of variants in the individual). 
 
 For tools that give separate scores for dominant vs recessive variants (currently just Maverick and MAPPIN), the genotype of the variant in the individual is used to determine which value should be used. Homozygous variants are assigned the recessive predicted score, while heterozygous variants are assigned the dominant predicted score. Additionally, all possible pairs of heterozygous variants on the same gene also get their recessive scores averaged in order to consider the possibility of compound heterozygous variant effects. For the causal variants, those with dominant effects are spiked-in as heterozygous, while those with recessive effects are spiked-in as homozygous. When normalizing performance, these 'zygosity-aware' tools have their causal variant rank divided by the number of variants plus the number of compound heterozygous pairs that they considered in each individual. Also for each of these zygosity-aware tools, a non-zygosity-aware version is modelled where the dominant and recessive pathogenic scores are summed together and the tool is evaluated exactly the same way as all the other tools. Those are listed as Maverick (No Zygosity) and MAPPIN (No Zygosity) in the results set. 
+
+### Example Results
+Results for each individual year generate a "solve curve" like this: ![2022 non-normalized ranks](Figures/2022_ranks20.png)
+
+We then normalize the ranks as described above, which generates a normalized solve curve for that year: ![2022 normalized ranks](Figures/2022_normalizedRanks.png)
+
+Finally, we calculate the area under those normalized curves to generate our final score for each tool for each individual year: ~[2022 normalized AUC](Figures/2022_AUC_barplots_normalizedRanks.png)
+
+### VarPB correlation with MAVEs
+Our initial motivation for creating VarPB was anecdotal observation that strong performance on MAVE datasets did not equate to strong performance at medical genetics prioritization tasks. So, one of our top priorities with VarPB was to assess its correlation with MAVE performance measures for a variety of tools. We used the performance of 10 pathogenicity prediction tools (AlphaMissense, EVE, gMVP, VARITY_R_LOO, REVEL, SIFT, Polyphen2_HVAR, Polyphen2_HDIV, CADD, and PrimateAI) on the 26 human gene datasets in ProteinGym provided in Figure 3B of Cheng, et al (2) as our measure of MAVE performance and plotted this against performance measured on VarPB: ![varPB vs MAVEs](Figures/MAVE_comparison.png)
+
+We observed a spearman correlation coefficient of 0.202 between these two variables, suggesting that VarPB is indeed measuring a distinct aspect of variant effect prediction performance than this set of MAVEs. 
+
 </details>
 
 ## Results
@@ -28,7 +41,7 @@ The current overall result of VarPB is shown below: ![Overall Result](Figures/Ov
 
 This figure shows the average area under the normalized solve curve for each tool measured over the seven years of data (2017 - 2023) with the error bars representing the standard deviation of the tool's performance over the years. Supervised learning approaches are shown in grey, while unsupervised methods are shown in black. 
 
-Results for each individual year look like this: ![2022 non-normalized](Figures/2022_Non-normalized_combined.png)
+
 
 Where on the left we have the individual solve curves for each tool. The x-axis is the top-n ranks of variants inspected and the y-axis is the cumulative percentage of simulated cases that would be solved by variants in those top-n ranks. On the right, we see the area under the curves on the left, taken through the top 20 ranks. Only the top performing 40 tools are shown for clarity. 
 
@@ -36,39 +49,29 @@ The normalized results for that same year look like this: ![2022 normalized](Fig
 
 This figure is much the same, but the x-axis of the figure on the left is now the percentile of variants instead of absolute rank number in order to not give an unfair advantage to tools that did not have available scores for all variants. 
 
-### VarPB correlation with MAVEs
-Our initial motivation for creating VarPB was anecdotal observation that strong performance on MAVE datasets did not equate to strong performance at medical genetics prioritization tasks. So, one of our top priorities with VarPB was to assess its correlation with MAVE performance measures for a variety of tools. We used the performance of 10 pathogenicity prediction tools (AlphaMissense, EVE, gMVP, VARITY_R_LOO, REVEL, SIFT, Polyphen2_HVAR, Polyphen2_HDIV, CADD, and PrimateAI) on the 26 human gene datasets in ProteinGym provided in Figure 3B of Cheng, et al (2) as our measure of MAVE performance and plotted this against performance measured on VarPB: ![varPB vs MAVEs](Figures/MAVE_comparison.png)
-
-We observed a spearman correlation coefficient of 0.202 between these two variables, suggesting that VarPB is indeed measuring a distinct aspect of variant effect prediction performance than this set of MAVEs. 
-
 ### Individual Year VarPB Data
 <details><summary>Show individual year results</summary>
 In this section, the results for each individual year of ClinVar variants are reported. We show this with normalized solve curve, normalized area under the solve curve bar plot, non-normalized solve curve for top 20 ranks, non-normalized area under the solve curve for top 20 ranks bar plot, non-normalized solve curve for top 100 ranks, and non-normalized area under the solve curve for top 100 ranks bar plot for each year. 
 #### 2023
-{% include carousel.html number="1" %}
+![2023 normalized solve curve](Figures/2023_normalizedRanks.png)
 
 #### 2022
-{% include carousel.html number="2" %}
+![2022 normalized solve curve](Figures/2022_normalizedRanks.png)
 
 #### 2021
-{% include carousel.html number="3" %}
-
+![2021 normalized solve curve](Figures/2021_normalizedRanks.png)
 
 #### 2020
-{% include carousel.html number="4" %}
-
+![2020 normalized solve curve](Figures/2020_normalizedRanks.png)
 
 #### 2019
-{% include carousel.html number="5" %}
-
+![2019 normalized solve curve](Figures/2019_normalizedRanks.png)
 
 #### 2018
-{% include carousel.html number="6" %}
-
+![2018 normalized solve curve](Figures/2018_normalizedRanks.png)
 
 #### 2017
-{% include carousel.html number="7" %}
-
+![2017 normalized solve curve](Figures/2017_normalizedRanks.png)
 </details>
 
 ## Discussion
