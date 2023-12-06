@@ -35,75 +35,112 @@ This figure is much the same, but the x-axis of the figure on the left is now th
 ### VarPB correlation with MAVEs
 Our initial motivation for creating VarPB was anecdotal observation that strong performance on MAVE datasets did not equate to strong performance at medical genetics prioritization tasks. So, one of our top priorities with VarPB was to assess its correlation with MAVE performance measures for a variety of tools. We used the performance of 10 pathogenicity prediction tools (AlphaMissense, EVE, gMVP, VARITY_R_LOO, REVEL, SIFT, Polyphen2_HVAR, Polyphen2_HDIV, CADD, and PrimateAI) on the 26 human gene datasets in ProteinGym provided in Figure 3B of Cheng, et al (2) as our measure of MAVE performance and plotted this against performance measured on VarPB: ![varPB vs MAVEs](Figures/MAVE_comparison.png)
 
-We observed a spearman correlation coefficient of 0.238 between these two variables, suggesting that VarPB is indeed measuring a distinct aspect of variant effect prediction performance than this set of MAVEs. 
+We observed a spearman correlation coefficient of 0.202 between these two variables, suggesting that VarPB is indeed measuring a distinct aspect of variant effect prediction performance than this set of MAVEs. 
 
 ### Individual Year VarPB Data
 In this section, the results for each individual year of ClinVar variants are reported. We show this with normalized solve curve, normalized area under the solve curve bar plot, non-normalized solve curve for top 20 ranks, non-normalized area under the solve curve for top 20 ranks bar plot, non-normalized solve curve for top 100 ranks, and non-normalized area under the solve curve for top 100 ranks bar plot for each year. 
 #### 2023
 Normalized solve curve: ![2023 normalized solve curve](Figures/2023_normalizedRanks.png)
+
 Normalized area under the solve curve: ![2023 normalized AUC bar plot](Figures/2023_AUC_barplots_normalizedRanks.png)
+
 Non-normalized solve curve (top 20): ![2023 non-normalized solve curve top 20](Figures/2023_ranks20.png)
+
 Non-normalized area under the solve curve (top 20): ![2023 non-normalized AUC top 20 bar plot](Figures/2023_AUC_barplots_ranks20.png)
+
 Non-normalized solve curve (top 100): ![2023 non-normalized solve curve top 100](Figures/2023_ranks100.png)
+
 Non-normalized area under the solve curve (top 100): ![2023 non-normalized AUC top 100 bar plot](Figures/2023_AUC_barplots_ranks100.png)
 
 #### 2022
 Normalized solve curve: ![2022 normalized solve curve](Figures/2022_normalizedRanks.png)
+
 Normalized area under the solve curve: ![2022 normalized AUC bar plot](Figures/2022_AUC_barplots_normalizedRanks.png)
+
 Non-normalized solve curve (top 20): ![2022 non-normalized solve curve top 20](Figures/2022_ranks20.png)
+
 Non-normalized area under the solve curve (top 20): ![2022 non-normalized AUC top 20 bar plot](Figures/2022_AUC_barplots_ranks20.png)
+
 Non-normalized solve curve (top 100): ![2022 non-normalized solve curve top 100](Figures/2022_ranks100.png)
+
 Non-normalized area under the solve curve (top 100): ![2022 non-normalized AUC top 100 bar plot](Figures/2022_AUC_barplots_ranks100.png)
 
 #### 2021
 Normalized solve curve: ![2021 normalized solve curve](Figures/2021_normalizedRanks.png)
+
 Normalized area under the solve curve: ![2021 normalized AUC bar plot](Figures/2021_AUC_barplots_normalizedRanks.png)
+
 Non-normalized solve curve (top 20): ![2021 non-normalized solve curve top 20](Figures/2021_ranks20.png)
+
 Non-normalized area under the solve curve (top 20): ![2021 non-normalized AUC top 20 bar plot](Figures/2021_AUC_barplots_ranks20.png)
+
 Non-normalized solve curve (top 100): ![2021 non-normalized solve curve top 100](Figures/2021_ranks100.png)
+
 Non-normalized area under the solve curve (top 100): ![2021 non-normalized AUC top 100 bar plot](Figures/2021_AUC_barplots_ranks100.png)
 
 #### 2020
 Normalized solve curve: ![2020 normalized solve curve](Figures/2020_normalizedRanks.png)
+
 Normalized area under the solve curve: ![2020 normalized AUC bar plot](Figures/2020_AUC_barplots_normalizedRanks.png)
+
 Non-normalized solve curve (top 20): ![2020 non-normalized solve curve top 20](Figures/2020_ranks20.png)
+
 Non-normalized area under the solve curve (top 20): ![2020 non-normalized AUC top 20 bar plot](Figures/2020_AUC_barplots_ranks20.png)
+
 Non-normalized solve curve (top 100): ![2020 non-normalized solve curve top 100](Figures/2020_ranks100.png)
+
 Non-normalized area under the solve curve (top 100): ![2020 non-normalized AUC top 100 bar plot](Figures/2020_AUC_barplots_ranks100.png)
 
 #### 2019
 Normalized solve curve: ![2019 normalized solve curve](Figures/2019_normalizedRanks.png)
+
 Normalized area under the solve curve: ![2019 normalized AUC bar plot](Figures/2019_AUC_barplots_normalizedRanks.png)
+
 Non-normalized solve curve (top 20): ![2019 non-normalized solve curve top 20](Figures/2019_ranks20.png)
+
 Non-normalized area under the solve curve (top 20): ![2019 non-normalized AUC top 20 bar plot](Figures/2019_AUC_barplots_ranks20.png)
+
 Non-normalized solve curve (top 100): ![2019 non-normalized solve curve top 100](Figures/2019_ranks100.png)
+
 Non-normalized area under the solve curve (top 100): ![2019 non-normalized AUC top 100 bar plot](Figures/2019_AUC_barplots_ranks100.png)
 
 #### 2018
 Normalized solve curve: ![2018 normalized solve curve](Figures/2018_normalizedRanks.png)
+
 Normalized area under the solve curve: ![2018 normalized AUC bar plot](Figures/2018_AUC_barplots_normalizedRanks.png)
+
 Non-normalized solve curve (top 20): ![2018 non-normalized solve curve top 20](Figures/2018_ranks20.png)
+
 Non-normalized area under the solve curve (top 20): ![2018 non-normalized AUC top 20 bar plot](Figures/2018_AUC_barplots_ranks20.png)
+
 Non-normalized solve curve (top 100): ![2018 non-normalized solve curve top 100](Figures/2018_ranks100.png)
+
 Non-normalized area under the solve curve (top 100): ![2018 non-normalized AUC top 100 bar plot](Figures/2018_AUC_barplots_ranks100.png)
 
 #### 2017
 Normalized solve curve: ![2017 normalized solve curve](Figures/2017_normalizedRanks.png)
+
 Normalized area under the solve curve: ![2017 normalized AUC bar plot](Figures/2017_AUC_barplots_normalizedRanks.png)
+
 Non-normalized solve curve (top 20): ![2017 non-normalized solve curve top 20](Figures/2017_ranks20.png)
+
 Non-normalized area under the solve curve (top 20): ![2017 non-normalized AUC top 20 bar plot](Figures/2017_AUC_barplots_ranks20.png)
+
 Non-normalized solve curve (top 100): ![2017 non-normalized solve curve top 100](Figures/2017_ranks100.png)
+
 Non-normalized area under the solve curve (top 100): ![2017 non-normalized AUC top 100 bar plot](Figures/2017_AUC_barplots_ranks100.png)
 
 ## Discussion
-In the current version of the benchmark, Maverick (3) outperforms all other tools in all seven years evaluated. It is a supervised learning system and was trained on a set that included the variants used in evaluation years 2017, 2018, and 2019, so its performance on those years should be acknowledged to be inflated. 
+In the current version of the benchmark, Maverick (3) outperforms all other tools in all seven years evaluated. It is a supervised learning system and was trained on a set that included the variants used in evaluation years 2017, 2018, and 2019, so its performance on those years should be acknowledged to be inflated (Maverick's overall performance as shown in the first figure would drop from 0.808 to 0.787 if years 2017, 2018, and 2019 were removed, so it would still be the top ranking tool). 
 
 In general, supervised learning methods largely outperformed the unsupervised methods like AlphaMissense, PrimateAI-3D, and EVE. While those tools exhibit strong performance in MAVE benchmarks, there is clearly still information being conveyed in the supervised learning regime that they have not been able to replicate in the unsupervised methodology. This represents the biggest area for improvement in the field. 
 
 This benchmark includes only missense variants, but future versions should offer tests that include frameshifting and non-frameshifting indels as well as stop-gain and stop-loss variants. Eventually, benchmarks like this should expand beyond just protein-altering variants to consider non-coding variants, structural variants, and tandem repeats. It is the authors' hope that a benchmark like this can grow with the field to continually provide a challenge for tool developers to solve. 
 
 ## Data Access
-All ClinVar variants used and the missense variants from each test individual, along with the ranks by which each tool solved each combination of test variant and individual, are available for download from Zenodo at DOI: XXX. Using this data, individuals can evaluate a new tool and compare it against all the others. Code to perform these evaluations is available in the [code folder](https://github.com/ZuchnerLab/VariantPrioritizationBenchmark/). Unfortunately, the individual prediction scores of each tool on each variant are not included in this benchmark as they are subject to each individual tool's own copyright restrictions. 
+All ClinVar variants used and the missense variants from each test individual, along with the ranks by which each tool solved each combination of test variant and individual, are available for download from Zenodo at DOI: XXX. Using this data, individuals can evaluate a new tool and compare it against all the others. Code to perform these evaluations is available in the [code folder](https://github.com/ZuchnerLab/VariantPrioritizationBenchmark/Code/). Unfortunately, the individual prediction scores of each tool on each variant are not included in this benchmark as they are subject to each individual tool's own copyright restrictions. 
+
+The leaderboard of results data is available in the [results folder](https://github.com/Zuchnerlab/VariantPrioritizationBenchmark/Results/).
 
 ## References
 1. Mao Q, Ciotlos S, Zhang RY, Ball MP, Chin R, Carnevali P, Barua N, Nguyen S, Agarwal MR, Clegg T, Connelly A, Vandewege W, Zaranek AW, Estep PW, Church GM, Drmanac R, Peters BA. The whole genome sequences and experimentally phased haplotypes of over 100 personal genomes. Gigascience. 2016 Oct 11;5(1):42. doi: 10.1186/s13742-016-0148-z. PMID: 27724973; PMCID: PMC5057367.
