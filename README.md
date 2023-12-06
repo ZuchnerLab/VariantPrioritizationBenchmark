@@ -8,7 +8,7 @@ One of the most common uses of variant effect prediction tools (AlphaMissense, P
 Here, we release the Variant Prioritization Benchmark (VarPB) that we hope will be used analogously to MAVEs for the medical genetics task of identifying rare disease-causing pathogenic variants in individuals. We have collected tens of thousands of rare disease-causing variants from ClinVar with known modes of inheritance and combine them with over 100 individuals from the Personal Genome Project who have consented to open access and free distribution of their individual genotype data, but who are not present in any major public allele frequency databases (to the best knowledge of the authors). 
 
 ## Methods
-Pathogenic variants were collected from ClinVar using its archive of variant summary files. The January variant summary files were collected for the years 2017, 2018, 2019, 2020, 2021, 2022, and 2023 as well as the October 2023 file (which was the most recent file at the time). Additional years are planned to be added as time passes. For each year, we selected the pathogenic or likely pathogenic missense variants that had been added in that year which had a one-star or greater level of support and which also were associated with an OMIM phenotype. We applied data from OMIM to separate these variants into those with dominant and recessive modes of action. This enabled the creation of time-resolved datasets with hundreds to thousands of variants being used for evaluation in each year. The purpose in creating time-resolved datasets is to allow users to ignore results for tools on particular years if they were trained in a supervised learning paradigm with data that included variants from that year of ClinVar data. 
+Pathogenic variants were collected from ClinVar using its archive of variant summary files. The January variant summary files were collected for the years 2017, 2018, 2019, 2019, 2021, 2022, and 2023 as well as the October 2023 file (which was the most recent file at the time). Additional years are planned to be added as time passes. For each year, we selected the pathogenic or likely pathogenic missense variants that had been added in that year which had a one-star or greater level of support and which also were associated with an OMIM phenotype. We applied data from OMIM to separate these variants into those with dominant and recessive modes of action. This enabled the creation of time-resolved datasets with hundreds to thousands of variants being used for evaluation in each year. The purpose in creating time-resolved datasets is to allow users to ignore results for tools on particular years if they were trained in a supervised learning paradigm with data that included variants from that year of ClinVar data. 
 
 We utilized the 107 individuals from (1) for whom genomic data could be obtained. These are all samples from the Personal Genome Project and as such are consented for genomic data redistribution. They were each sequenced to a mean coverage of approximately 100x. The samples are overwhelmingly of European ancestry, a weakness of the initial version of this benchmark which we hope to remedy in the future. All 107 genomes were sequenced by Complete Genomics and the processed variant calls were downloaded from the [Personal Genome Project website](https://my.pgp-hms.org/public_genetic_data). 
 
@@ -38,8 +38,62 @@ Our initial motivation for creating VarPB was anecdotal observation that strong 
 We observed a spearman correlation coefficient of 0.238 between these two variables, suggesting that VarPB is indeed measuring a distinct aspect of variant effect prediction performance than this set of MAVEs. 
 
 ### Individual Year VarPB Data
+In this section, the results for each individual year of ClinVar variants are reported. We show this with normalized solve curve, normalized area under the solve curve bar plot, non-normalized solve curve for top 20 ranks, non-normalized area under the solve curve for top 20 ranks bar plot, non-normalized solve curve for top 100 ranks, and non-normalized area under the solve curve for top 100 ranks bar plot for each year. 
+#### 2023
+Normalized solve curve: ![2023 normalized solve curve](Figures/2023_normalizedRanks.png)
+Normalized area under the solve curve: ![2023 normalized AUC bar plot](Figures/2023_AUC_barplots_normalizedRanks.png)
+Non-normalized solve curve (top 20): ![2023 non-normalized solve curve top 20](Figures/2023_ranks20.png)
+Non-normalized area under the solve curve (top 20): ![2023 non-normalized AUC top 20 bar plot](Figures/2023_AUC_barplots_ranks20.png)
+Non-normalized solve curve (top 100): ![2023 non-normalized solve curve top 100](Figures/2023_ranks100.png)
+Non-normalized area under the solve curve (top 100): ![2023 non-normalized AUC top 100 bar plot](Figures/2023_AUC_barplots_ranks100.png)
 
-Coming soon. 
+#### 2022
+Normalized solve curve: ![2022 normalized solve curve](Figures/2022_normalizedRanks.png)
+Normalized area under the solve curve: ![2022 normalized AUC bar plot](Figures/2022_AUC_barplots_normalizedRanks.png)
+Non-normalized solve curve (top 20): ![2022 non-normalized solve curve top 20](Figures/2022_ranks20.png)
+Non-normalized area under the solve curve (top 20): ![2022 non-normalized AUC top 20 bar plot](Figures/2022_AUC_barplots_ranks20.png)
+Non-normalized solve curve (top 100): ![2022 non-normalized solve curve top 100](Figures/2022_ranks100.png)
+Non-normalized area under the solve curve (top 100): ![2022 non-normalized AUC top 100 bar plot](Figures/2022_AUC_barplots_ranks100.png)
+
+#### 2021
+Normalized solve curve: ![2021 normalized solve curve](Figures/2021_normalizedRanks.png)
+Normalized area under the solve curve: ![2021 normalized AUC bar plot](Figures/2021_AUC_barplots_normalizedRanks.png)
+Non-normalized solve curve (top 20): ![2021 non-normalized solve curve top 20](Figures/2021_ranks20.png)
+Non-normalized area under the solve curve (top 20): ![2021 non-normalized AUC top 20 bar plot](Figures/2021_AUC_barplots_ranks20.png)
+Non-normalized solve curve (top 100): ![2021 non-normalized solve curve top 100](Figures/2021_ranks100.png)
+Non-normalized area under the solve curve (top 100): ![2021 non-normalized AUC top 100 bar plot](Figures/2021_AUC_barplots_ranks100.png)
+
+#### 2020
+Normalized solve curve: ![2020 normalized solve curve](Figures/2020_normalizedRanks.png)
+Normalized area under the solve curve: ![2020 normalized AUC bar plot](Figures/2020_AUC_barplots_normalizedRanks.png)
+Non-normalized solve curve (top 20): ![2020 non-normalized solve curve top 20](Figures/2020_ranks20.png)
+Non-normalized area under the solve curve (top 20): ![2020 non-normalized AUC top 20 bar plot](Figures/2020_AUC_barplots_ranks20.png)
+Non-normalized solve curve (top 100): ![2020 non-normalized solve curve top 100](Figures/2020_ranks100.png)
+Non-normalized area under the solve curve (top 100): ![2020 non-normalized AUC top 100 bar plot](Figures/2020_AUC_barplots_ranks100.png)
+
+#### 2019
+Normalized solve curve: ![2019 normalized solve curve](Figures/2019_normalizedRanks.png)
+Normalized area under the solve curve: ![2019 normalized AUC bar plot](Figures/2019_AUC_barplots_normalizedRanks.png)
+Non-normalized solve curve (top 20): ![2019 non-normalized solve curve top 20](Figures/2019_ranks20.png)
+Non-normalized area under the solve curve (top 20): ![2019 non-normalized AUC top 20 bar plot](Figures/2019_AUC_barplots_ranks20.png)
+Non-normalized solve curve (top 100): ![2019 non-normalized solve curve top 100](Figures/2019_ranks100.png)
+Non-normalized area under the solve curve (top 100): ![2019 non-normalized AUC top 100 bar plot](Figures/2019_AUC_barplots_ranks100.png)
+
+#### 2018
+Normalized solve curve: ![2018 normalized solve curve](Figures/2018_normalizedRanks.png)
+Normalized area under the solve curve: ![2018 normalized AUC bar plot](Figures/2018_AUC_barplots_normalizedRanks.png)
+Non-normalized solve curve (top 20): ![2018 non-normalized solve curve top 20](Figures/2018_ranks20.png)
+Non-normalized area under the solve curve (top 20): ![2018 non-normalized AUC top 20 bar plot](Figures/2018_AUC_barplots_ranks20.png)
+Non-normalized solve curve (top 100): ![2018 non-normalized solve curve top 100](Figures/2018_ranks100.png)
+Non-normalized area under the solve curve (top 100): ![2018 non-normalized AUC top 100 bar plot](Figures/2018_AUC_barplots_ranks100.png)
+
+#### 2017
+Normalized solve curve: ![2017 normalized solve curve](Figures/2017_normalizedRanks.png)
+Normalized area under the solve curve: ![2017 normalized AUC bar plot](Figures/2017_AUC_barplots_normalizedRanks.png)
+Non-normalized solve curve (top 20): ![2017 non-normalized solve curve top 20](Figures/2017_ranks20.png)
+Non-normalized area under the solve curve (top 20): ![2017 non-normalized AUC top 20 bar plot](Figures/2017_AUC_barplots_ranks20.png)
+Non-normalized solve curve (top 100): ![2017 non-normalized solve curve top 100](Figures/2017_ranks100.png)
+Non-normalized area under the solve curve (top 100): ![2017 non-normalized AUC top 100 bar plot](Figures/2017_AUC_barplots_ranks100.png)
 
 ## Discussion
 In the current version of the benchmark, Maverick (3) outperforms all other tools in all seven years evaluated. It is a supervised learning system and was trained on a set that included the variants used in evaluation years 2017, 2018, and 2019, so its performance on those years should be acknowledged to be inflated. 
@@ -49,7 +103,7 @@ In general, supervised learning methods largely outperformed the unsupervised me
 This benchmark includes only missense variants, but future versions should offer tests that include frameshifting and non-frameshifting indels as well as stop-gain and stop-loss variants. Eventually, benchmarks like this should expand beyond just protein-altering variants to consider non-coding variants, structural variants, and tandem repeats. It is the authors' hope that a benchmark like this can grow with the field to continually provide a challenge for tool developers to solve. 
 
 ## Data Access
-All ClinVar variants used and the missense variants from each test individual, along with the ranks by which each tool solved each combination of test variant and individual, are available for download from Zenodo at DOI: XXX. Using this data, individuals can evaluate a new tool and compare it against all the others. Code to perform these evaluations is available in the [here](https://github.com/ZuchnerLab/VariantPrioritizationBenchmark/). Unfortunately, the individual prediction scores of each tool on each variant are not included in this benchmark as they are subject to each individual tool's own copyright restrictions. 
+All ClinVar variants used and the missense variants from each test individual, along with the ranks by which each tool solved each combination of test variant and individual, are available for download from Zenodo at DOI: XXX. Using this data, individuals can evaluate a new tool and compare it against all the others. Code to perform these evaluations is available in the [code folder](https://github.com/ZuchnerLab/VariantPrioritizationBenchmark/). Unfortunately, the individual prediction scores of each tool on each variant are not included in this benchmark as they are subject to each individual tool's own copyright restrictions. 
 
 ## References
 1. Mao Q, Ciotlos S, Zhang RY, Ball MP, Chin R, Carnevali P, Barua N, Nguyen S, Agarwal MR, Clegg T, Connelly A, Vandewege W, Zaranek AW, Estep PW, Church GM, Drmanac R, Peters BA. The whole genome sequences and experimentally phased haplotypes of over 100 personal genomes. Gigascience. 2016 Oct 11;5(1):42. doi: 10.1186/s13742-016-0148-z. PMID: 27724973; PMCID: PMC5057367.
