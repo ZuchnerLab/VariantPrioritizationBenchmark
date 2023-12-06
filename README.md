@@ -23,10 +23,12 @@ For tools that give separate scores for dominant vs recessive variants (currentl
 
 ### Example Results
 Results for each individual year generate a "solve curve" like this: ![2022 non-normalized ranks](Figures/2022_ranks20.png)
+The x-axis is the top-n ranks of variants inspected and the y-axis is the cumulative percentage of simulated cases that would be solved by variants in those top-n ranks.
 
 We then normalize the ranks as described above, which generates a normalized solve curve for that year: ![2022 normalized ranks](Figures/2022_normalizedRanks.png)
+This figure is much the same, but the x-axis is now the percentile of variants instead of absolute rank number in order to not give an unfair advantage to tools that did not have available scores for all variants. 
 
-Finally, we calculate the area under those normalized curves to generate our final score for each tool for each individual year: ~[2022 normalized AUC](Figures/2022_AUC_barplots_normalizedRanks.png)
+Finally, we calculate the area under those normalized curves to generate our final score for each tool for each individual year (only the top 40 tools are shown for visual clarity): ~[2022 normalized AUC](Figures/2022_AUC_barplots_normalizedRanks.png)
 
 ### VarPB correlation with MAVEs
 Our initial motivation for creating VarPB was anecdotal observation that strong performance on MAVE datasets did not equate to strong performance at medical genetics prioritization tasks. So, one of our top priorities with VarPB was to assess its correlation with MAVE performance measures for a variety of tools. We used the performance of 10 pathogenicity prediction tools (AlphaMissense, EVE, gMVP, VARITY_R_LOO, REVEL, SIFT, Polyphen2_HVAR, Polyphen2_HDIV, CADD, and PrimateAI) on the 26 human gene datasets in ProteinGym provided in Figure 3B of Cheng, et al (2) as our measure of MAVE performance and plotted this against performance measured on VarPB: ![varPB vs MAVEs](Figures/MAVE_comparison.png)
@@ -40,14 +42,6 @@ We observed a spearman correlation coefficient of 0.202 between these two variab
 The current overall result of VarPB is shown below: ![Overall Result](Figures/Overall_Result.png)
 
 This figure shows the average area under the normalized solve curve for each tool measured over the seven years of data (2017 - 2023) with the error bars representing the standard deviation of the tool's performance over the years. Supervised learning approaches are shown in grey, while unsupervised methods are shown in black. 
-
-
-
-Where on the left we have the individual solve curves for each tool. The x-axis is the top-n ranks of variants inspected and the y-axis is the cumulative percentage of simulated cases that would be solved by variants in those top-n ranks. On the right, we see the area under the curves on the left, taken through the top 20 ranks. Only the top performing 40 tools are shown for clarity. 
-
-The normalized results for that same year look like this: ![2022 normalized](Figures/2022_Normalized_combined.png)
-
-This figure is much the same, but the x-axis of the figure on the left is now the percentile of variants instead of absolute rank number in order to not give an unfair advantage to tools that did not have available scores for all variants. 
 
 ### Individual Year VarPB Data
 <details><summary>Show individual year results</summary>
