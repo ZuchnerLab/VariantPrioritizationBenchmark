@@ -99,6 +99,7 @@ Requirements:
 * Scipy, Numpy, Pandas, Scikit-learn, Matplotlib, cmocean
 * File containing variant predictions of the new method for all missense variants. Prediction scores are expected to range from 0 to 1, with higher scores representing greater likelihood of pathogenicity. The file is expected to be four columns: Chromosome, Position, Ref, Alt, and the predicitons of the new method (named as stated in the '--toolColumnName' parameter)
 
+This script will output plots of performance (normalized and non-normalized) for each of the years 2017 - 2023 with the newly added tool compared against all others in the database. It will also print out the final benchmark scores for each tool for each year in a tab-delimited text file called 'AUCs_normalizedRanks_2017-2023.txt' and 'AUCs_nonNormalizedRanks_2017-2023.txt' which are useful for generating your own plots (or selecting a subset of years for your plots). 
 
 ## Citation
 Until this work is published, you can cite the Zenodo DOI: https://zenodo.org/doi/10.5281/zenodo.10278443
