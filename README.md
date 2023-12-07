@@ -76,9 +76,32 @@ In general, supervised learning methods largely outperformed the unsupervised me
 This benchmark includes only missense variants, but future versions should offer tests that include frameshifting and non-frameshifting indels as well as stop-gain and stop-loss variants. Eventually, benchmarks like this should expand beyond just protein-altering variants to consider non-coding variants, structural variants, and tandem repeats. It is the authors' hope that a benchmark like this can grow with the field to continually provide a challenge for tool developers to solve. 
 
 ## Data Access
-All ClinVar variants used and the missense variants from each test individual, along with the ranks by which each tool solved each combination of test variant and individual, are available for download from [Zenodo](https://doi.org/10.5281/zenodo.10278481). Using this data, individuals can evaluate a new tool and compare it against all the others. Code to perform these evaluations is available in the [code folder](https://github.com/ZuchnerLab/VariantPrioritizationBenchmark/tree/main/Code). Unfortunately, the individual prediction scores of each tool on each variant are not included in this benchmark as they are subject to each individual tool's own copyright restrictions. 
+All ClinVar variants used and the missense variants from each test individual, along with the ranks by which each tool solved each combination of test variant and individual, are available for download from [Zenodo](https://zenodo.org/doi/10.5281/zenodo.10278443). Using this data, individuals can evaluate a new tool and compare it against all the others. Code to perform these evaluations is available in the [code folder](https://github.com/ZuchnerLab/VariantPrioritizationBenchmark/tree/main/Code). Unfortunately, the individual prediction scores of each tool on each variant are not included in this benchmark as they are subject to each individual tool's own copyright restrictions. 
 
 The leaderboard of results data is available in the [results folder](https://github.com/ZuchnerLab/VariantPrioritizationBenchmark/tree/main/Results).
+
+## Add a new tool
+You can [post an issue](https://github.com/ZuchnerLab/VariantPrioritizationBenchmark/issues) naming a new tool that you would like added to the comparison set. You can also run this benchmark on new tools on your own like this:
+```
+# download the data from the Zenodo repository (make sure to use the latest release)
+wget -o files-archive.zip "https://zenodo.org/api/records/10278481/files-archive"
+unzip files-archive.zip
+
+# download the benchmarking script
+wget "https://raw.githubusercontent.com/ZuchnerLab/VariantPrioritizationBenchmark/main/Code/benchmarkNewTool.py"
+
+# benchmark your new tool
+python benchmarkNewTool.py --newToolScores novelMethodVariantPredictions.txt --toolColumnName "myMethod_score" --toolName "myMethod" --dataDirectory "."
+```
+
+Requirements:
+* Python 3
+* Scipy, Numpy, Pandas, Scikit-learn, Matplotlib, cmocean
+* File containing variant predictions of the new method for all missense variants. Prediction scores are expected to range from 0 to 1, with higher scores representing greater likelihood of pathogenicity. The file is expected to be four columns: Chromosome, Position, Ref, Alt, and the predicitons of the new method (named as stated in the '--toolColumnName' parameter)
+
+
+## Citation
+Until this work is published, you can cite the Zenodo DOI: https://zenodo.org/doi/10.5281/zenodo.10278443
 
 ## References
 1. Mao Q, Ciotlos S, Zhang RY, Ball MP, Chin R, Carnevali P, Barua N, Nguyen S, Agarwal MR, Clegg T, Connelly A, Vandewege W, Zaranek AW, Estep PW, Church GM, Drmanac R, Peters BA. The whole genome sequences and experimentally phased haplotypes of over 100 personal genomes. Gigascience. 2016 Oct 11;5(1):42. doi: 10.1186/s13742-016-0148-z. PMID: 27724973; PMCID: PMC5057367.
