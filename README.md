@@ -85,7 +85,7 @@ The leaderboard of results data is available in the [results folder](https://git
 You can [post an issue](https://github.com/ZuchnerLab/VariantPrioritizationBenchmark/issues) naming a new tool that you would like added to the comparison set. You can also run this benchmark on new tools on your own like this:
 ```
 # download the data from the Zenodo repository (make sure to use the latest release)
-wget -o files-archive.zip "https://zenodo.org/api/records/10278481/files-archive"
+wget -o files-archive.zip "https://zenodo.org/api/records/10291114/files-archive"
 unzip files-archive.zip
 
 # download the benchmarking script
