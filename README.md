@@ -45,8 +45,8 @@ This figure shows the average area under the normalized solve curve for each too
 
 ### Individual Year VarPB Data
 <details><summary>Show individual year results</summary>
-In this section, the results for each individual year of ClinVar variants are reported. We show this with normalized solve curve, normalized area under the solve curve bar plot, non-normalized solve curve for top 20 ranks, non-normalized area under the solve curve for top 20 ranks bar plot, non-normalized solve curve for top 100 ranks, and non-normalized area under the solve curve for top 100 ranks bar plot for each year. 
-  
+In this section, the results for each individual year of ClinVar variants are reported. We show this with normalized solve curve, normalized area under the solve curve bar plot, non-normalized solve curve for top 20 ranks, non-normalized area under the solve curve for top 20 ranks bar plot, non-normalized solve curve for top 100 ranks, and non-normalized area under the solve curve for top 100 ranks bar plot for each year.
+
 #### 2023
 ![2023 normalized solve curve](Figures/2023_AUC_barplots_normalizedRanks.png)
 
