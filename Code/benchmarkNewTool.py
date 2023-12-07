@@ -257,3 +257,37 @@ for year in years:
                          fileName=os.path.join(workingDir,str(year) +'_AUC_barplots_ranks20_with' + thisToolName + '.png'),maxSize=20)
 
 
+# generate table of final scores for each tool for each year
+# non-normalized
+toolNames=list(standardToolsNameConverter.keys())
+scoresOverYears=pandas.DataFrame(np.zeros((len(toolNames),len(years))),columns=years,index=toolNames)
+for year in years:
+    print('Starting year: ' + year)
+    database=pandas.read_csv('Results/' + year + '_combinedResults.txt.gz',sep='\t',low_memory=False,compression='gzip')
+    x=np.arange(0,21)
+    totalSites=len(database)
+    for toolType in toolNames:
+        y=np.zeros((len(x)))
+        for i in x:
+            y[i]=len(database.loc[((database[toolType]>0) & (database[toolType]<=x[i])),:])/len(database.loc[(database[toolType]>0),:])
+        scoresOverYears.loc[toolType,year]=np.round(sklearn.metrics.auc(x/20,y),4)
+scoresOverYears['mean']=scoresOverYears.mean(axis=1)
+scoresOverYears['stdev']=scoresOverYears.iloc[:,:7].std(axis=1)
+scoresOverYears.to_csv(os.path.join(workingDir,'AUCs_nonNormalizedRanks_2017-2023.txt'),sep='\t',index=True)
+
+# normalized
+maxSize=0.003
+scoresOverYearsNorm=pandas.DataFrame(np.zeros((len(toolNames),len(years))),columns=years,index=toolNames)
+for year in years:
+    print('Starting year: ' + year)
+    database=pandas.read_csv('Results/' + year + '_combinedNormalizedResults.txt.gz',sep='\t',low_memory=False,compression='gzip')
+    x=np.arange(0,maxSize+0.0001,0.0001)
+    totalSites=len(database)
+    for toolType in toolNames:
+        y=np.zeros((len(x)))
+        for i in range(len(x)):
+            y[i]=len(database.loc[((database[toolType]>0) & (database[toolType]<=x[i])),:])/len(database.loc[(database[toolType]>0),:])
+        scoresOverYearsNorm.loc[toolType,year]=np.round(sklearn.metrics.auc(x/maxSize,y),4)
+scoresOverYearsNorm['mean']=scoresOverYearsNorm.mean(axis=1)
+scoresOverYearsNorm['stdev']=scoresOverYearsNorm.iloc[:,:7].std(axis=1)
+scoresOverYearsNorm.to_csv(os.path.join(workingDir,'AUCs_normalizedRanks_2017-2023.txt'),sep='\t',index=True)
