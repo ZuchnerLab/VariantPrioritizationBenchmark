@@ -43,6 +43,8 @@ The current overall result of VarPB is shown below: ![Overall Result](Figures/Ov
 
 This figure shows the average area under the normalized solve curve for each tool measured over the seven years of data (2017 - 2023) with the error bars representing the standard deviation of the tool's performance over the years. Supervised learning approaches are shown in grey, while unsupervised methods are shown in black. 
 
+Only the top 20 methods are shown here for visual clarity. For the complete results on all 52 tools, download the files in the 'Results' folder. 
+
 ### Individual Year VarPB Data
 <details markdown="1"><summary>Show individual year results</summary>
 In this section, the results for each individual year of ClinVar variants are reported. We show this with normalized solve curve, normalized area under the solve curve bar plot, non-normalized solve curve for top 20 ranks, non-normalized area under the solve curve for top 20 ranks bar plot, non-normalized solve curve for top 100 ranks, and non-normalized area under the solve curve for top 100 ranks bar plot for each year.
