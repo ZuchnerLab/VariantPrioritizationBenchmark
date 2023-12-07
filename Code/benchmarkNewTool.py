@@ -15,7 +15,7 @@ parser = argparse.ArgumentParser(description="Benchmark a new tool against the o
 parser.add_argument("--newToolScores",help="Path to file containing variant calls for the tool to evaluate. Should contain columns for 'Chromosome','Position','Ref','Alt', and the tool prediction values")
 parser.add_argument("--toolColumnName",help="Header value for the fifth column of the newToolScores file")
 parser.add_argument("--toolName",help="Name to be used for the new tool in all outputs")
-parser.add_argument("--dataDirectory",help="Path to directory containing the test sets, test sample data, and initial database values")
+parser.add_argument("--dataDirectory",default='.',help="Path to directory containing the test sets, test sample data, and initial database values")
 args = vars(parser.parse_args())
 
 # Establish variables
@@ -184,7 +184,7 @@ variantScores=variantScores.rename(columns={'Chromosome':'hg19_chr','Position':'
 variantScores=variantScores.loc[((variantScores['hg19_chr']!='chrX') & (variantScores['hg19_chr']!='chrY') & (variantScores['hg19_chr']!='chrMT') & (variantScores['hg19_chr']!='chrM')),:].reset_index(drop=True)
 variantScores['hg19_chr']=variantScores.loc[:,'hg19_chr'].str[3:].astype(int)
 
-testSampleVariants=pandas.read_csv(os.path.join(workingDir,'allSamplesExonicVariants.txt'),sep='\t',low_memory=False)
+testSampleVariants=pandas.read_csv(os.path.join(workingDir,'allSamplesExonicVariants.txt.gz'),sep='\t',low_memory=False,compression='gzip')
 # drop variants that are homozygous ref
 testSampleVariants=testSampleVariants.loc[~(testSampleVariants['genotype']==0),:].reset_index(drop=True)
 # drop non-autosomal variants
