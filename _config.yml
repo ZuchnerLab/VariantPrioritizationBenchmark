@@ -5,3 +5,6 @@ name: Variant Prioritization Benchmark
 
 # Short bio or description (displayed in the header)
 description: Open and freely-redistributable dataset and leaderboard for the medical genetics task of variant prioritization
+
+kramdown:
+  parse_block_html: true
