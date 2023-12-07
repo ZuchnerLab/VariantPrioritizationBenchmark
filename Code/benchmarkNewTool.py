@@ -71,6 +71,7 @@ def plotRanksNorm(normalizedRanks,description='New tool',fileName='tmp.png',maxS
     plt.legend(bbox_to_anchor=(1.5, 0.5),loc="right",fontsize=10)
     plt.tight_layout()
     plt.savefig(fileName,bbox_inches='tight',dpi=600)
+    plt.close()
     
 def plotAUCScores(normalizedRanks,description='New tool',fileName='tmp.png',maxSize=0.003):
     x=np.arange(0,maxSize+0.0001,0.0001)
@@ -104,6 +105,7 @@ def plotAUCScores(normalizedRanks,description='New tool',fileName='tmp.png',maxS
     plt.title(description,fontsize=25)
     plt.tight_layout()
     plt.savefig(fileName,bbox_inches='tight',dpi=600)
+    plt.close()
 
 def plotRanksNonNorm(inputRanks,description='Known Genes',fileName='tmp.png',maxSize=100):
     totalSites=len(inputRanks)
@@ -140,7 +142,8 @@ def plotRanksNonNorm(inputRanks,description='Known Genes',fileName='tmp.png',max
     plt.legend(bbox_to_anchor=(1.5, 0.5),loc="right",fontsize=10)
     plt.tight_layout()
     plt.savefig(fileName,bbox_inches='tight',dpi=600)
-    
+    plt.close()
+
 def plotAUCScoresNonNorm(inputRanks,description='Known Genes',fileName='tmp.png',maxSize=20):
     x=np.arange(0,maxSize+1)
     totalSites=len(inputRanks)
@@ -173,6 +176,7 @@ def plotAUCScoresNonNorm(inputRanks,description='Known Genes',fileName='tmp.png'
     plt.title(description,fontsize=25)
     plt.tight_layout()
     plt.savefig(fileName,bbox_inches='tight',dpi=600)
+    plt.close()
 
 
 
