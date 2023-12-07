@@ -1,0 +1,24 @@
+---
+carousels:
+  - images:
+    - image: 'Figures/2023_AUC_barplots_normalizedRanks.png'
+    - image: 'Figures/2023_normalizedRanks.png'
+  - images:
+    - image: 'Figures/2022_AUC_barplots_normalizedRanks.png'
+    - image: 'Figures/2022_normalizedRanks.png'
+  - images:
+    - image: 'Figures/2021_AUC_barplots_normalizedRanks.png'
+    - image: 'Figures/2021_normalizedRanks.png'
+  - images:
+    - image: 'Figures/2020_AUC_barplots_normalizedRanks.png'
+    - image: 'Figures/2020_normalizedRanks.png'
+  - images:
+    - image: 'Figures/2019_AUC_barplots_normalizedRanks.png'
+    - image: 'Figures/2019_normalizedRanks.png'
+  - images:
+    - image: 'Figures/2018_AUC_barplots_normalizedRanks.png'
+    - image: 'Figures/2018_normalizedRanks.png'
+  - images:
+    - image: 'Figures/2017_AUC_barplots_normalizedRanks.png'
+    - image: 'Figures/2017_normalizedRanks.png'
+---
