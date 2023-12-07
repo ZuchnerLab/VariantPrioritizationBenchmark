@@ -3,14 +3,14 @@
 ## Introduction
 The history of the development of machine learning systems has long been guided by the datasets and benchmarks available to researchers. This spans classic datasets such as ImageNet, which encouraged tremendous improvement in object recognition tasks, and the Stanford Question Answering Dataset (SQuAD), which played a similar role in natural language processing, as well as scientific data repositories like the Protein Data Bank without which the AlphaFold breakthrough would not have been possible. Recent work has established Multiplexed Assays of Variant Effects (MAVEs) in a similar role for tools dedicated to predicting the effects of protein variants. MAVEs provide an experimental measure of the functional impact of a variant (typically an amino acid substitution) and have become popular due in part to their ability to be freely downloaded and redistributed through efforts such as the ProteinGym. However, functional effects are not necessarily pathogenic effects. 
 
-<details><summary>Read more</summary>
+<details markdown="1"><summary>Read more</summary>
 One of the most common uses of variant effect prediction tools (AlphaMissense, PrimateAI-3D, EVE, CADD, etc) is to identify pathogenic variants in the context of cancer or rare disease. However, predicting functional effects of protein-altering mutations is not equal to predicting the causative variant in a pool of ~10,000 coding variants per genome. We have observed a poor correlation between the performance of tools tasked with predicting functional variant effects in MAVE datasets versus prioritizing disease-causing variants in individuals with rare diseses. Therefore, we believe the field needs a complement to MAVEs that is specific to medical genetics: an open and freely-redistributable benchmark measuring how well a tool can identify the causal variant in a patient with a rare disease. The challenge with this is that individual-level human genetic variation data is typically kept under restricted access in order to protect the privacy of those individuals. Most exceptions to this, such as individuals in the 1000 Genomes Project, have been widely used in public allele frequency databases and as a result have far fewer ultra-rare variants than a typical human (and no "unique" variants with allele frequency of 0). Since many tools utilize allele frequency in making variant pathogenicity predictions, use of such samples would not replicate real-world use scenarios. 
 
 Here, we release the Variant Prioritization Benchmark (VarPB) that we hope will be used analogously to MAVEs for the medical genetics task of identifying rare disease-causing pathogenic variants in individuals. We have collected tens of thousands of rare disease-causing variants from ClinVar with known modes of inheritance and combine them with over 100 individuals from the Personal Genome Project who have consented to open access and free distribution of their individual genotype data, but who are not present in any major public allele frequency databases (to the best knowledge of the authors). 
 </details>
 
 ## Methods
-<details><summary>Show Methods</summary>
+<details markdown="1"><summary>Show Methods</summary>
 Pathogenic variants were collected from ClinVar using its archive of variant summary files. The January variant summary files were collected for the years 2017, 2018, 2019, 2019, 2021, 2022, and 2023 as well as the October 2023 file (which was the most recent file at the time). Additional years are planned to be added as time passes. For each year, we selected the pathogenic or likely pathogenic missense variants that had been added in that year which had a one-star or greater level of support and which also were associated with an OMIM phenotype. We applied data from OMIM to separate these variants into those with dominant and recessive modes of action. This enabled the creation of time-resolved datasets with hundreds to thousands of variants being used for evaluation in each year. The purpose in creating time-resolved datasets is to allow users to ignore results for tools on particular years if they were trained in a supervised learning paradigm with data that included variants from that year of ClinVar data. 
 
 We utilized the 107 individuals from (1) for whom genomic data could be obtained. These are all samples from the Personal Genome Project and as such are consented for genomic data redistribution. They were each sequenced to a mean coverage of approximately 100x. The samples are overwhelmingly of European ancestry, a weakness of the initial version of this benchmark which we hope to remedy in the future. All 107 genomes were sequenced by Complete Genomics and the processed variant calls were downloaded from the [Personal Genome Project website](https://my.pgp-hms.org/public_genetic_data). 
@@ -44,35 +44,28 @@ The current overall result of VarPB is shown below: ![Overall Result](Figures/Ov
 This figure shows the average area under the normalized solve curve for each tool measured over the seven years of data (2017 - 2023) with the error bars representing the standard deviation of the tool's performance over the years. Supervised learning approaches are shown in grey, while unsupervised methods are shown in black. 
 
 ### Individual Year VarPB Data
-<details><summary>Show individual year results</summary>
+<details markdown="1"><summary>Show individual year results</summary>
 In this section, the results for each individual year of ClinVar variants are reported. We show this with normalized solve curve, normalized area under the solve curve bar plot, non-normalized solve curve for top 20 ranks, non-normalized area under the solve curve for top 20 ranks bar plot, non-normalized solve curve for top 100 ranks, and non-normalized area under the solve curve for top 100 ranks bar plot for each year.
 
 #### 2023
-
 ![2023 normalized solve curve](Figures/2023_AUC_barplots_normalizedRanks.png)
 
 #### 2022
-
 ![2022 normalized solve curve](Figures/2022_AUC_barplots_normalizedRanks.png)
 
 #### 2021
-
 ![2021 normalized solve curve](Figures/2021_AUC_barplots_normalizedRanks.png)
 
 #### 2020
-
 ![2020 normalized solve curve](Figures/2020_AUC_barplots_normalizedRanks.png)
 
 #### 2019
-
 ![2019 normalized solve curve](Figures/2019_AUC_barplots_normalizedRanks.png)
 
 #### 2018
-
 ![2018 normalized solve curve](Figures/2018_AUC_barplots_normalizedRanks.png)
 
 #### 2017
-
 ![2017 normalized solve curve](Figures/2017_AUC_barplots_normalizedRanks.png)
 </details>
 
