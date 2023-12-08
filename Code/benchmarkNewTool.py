@@ -266,8 +266,8 @@ for year in years:
 toolNames=list(standardToolsNameConverter.keys())
 scoresOverYears=pandas.DataFrame(np.zeros((len(toolNames),len(years))),columns=years,index=toolNames)
 for year in years:
-    print('Starting year: ' + year)
-    database=pandas.read_csv('Results/' + year + '_combinedResults.txt.gz',sep='\t',low_memory=False,compression='gzip')
+    print('Starting year: ' + str(year))
+    database=pandas.read_csv(os.path.join(workingDir,str(year) + '_combinedResults.txt.gz'),sep='\t',low_memory=False,compression='gzip')
     x=np.arange(0,21)
     totalSites=len(database)
     for toolType in toolNames:
@@ -283,8 +283,8 @@ scoresOverYears.to_csv(os.path.join(workingDir,'AUCs_nonNormalizedRanks_2017-202
 maxSize=0.003
 scoresOverYearsNorm=pandas.DataFrame(np.zeros((len(toolNames),len(years))),columns=years,index=toolNames)
 for year in years:
-    print('Starting year: ' + year)
-    database=pandas.read_csv('Results/' + year + '_combinedNormalizedResults.txt.gz',sep='\t',low_memory=False,compression='gzip')
+    print('Starting year: ' + str(year))
+    database=pandas.read_csv(os.path.join(workingDir,str(year) + '_combinedNormalizedResults.txt.gz'),sep='\t',low_memory=False,compression='gzip')
     x=np.arange(0,maxSize+0.0001,0.0001)
     totalSites=len(database)
     for toolType in toolNames:
